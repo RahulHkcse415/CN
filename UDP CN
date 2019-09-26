@@ -1,0 +1,25 @@
+serverUDP:
+from socket import *
+serverport = 12000
+serverSocket = socket(AF_INET,SOCK_DGRAM)
+serverSocket.bind(("10.124.7.87",serverport))
+print("The server is ready to receive")
+while 1:
+    Sentence,cliaddr=serverSocket.recvfrom(2048)
+    file1=open(Sentence,"r")
+    l=file1.read(2048)
+    serverSocket.sendto(bytes(l,"utf-8"),cliaddr)
+    print("sent back to client",l)
+    file1.close()
+
+
+clientUDP:
+from socket import *
+ServerName = "10.124.7.87"
+Serverport= 12000
+clientsocket=socket(AF_INET,SOCK_DGRAM)
+sentence=input('Enter file name:-')
+clientsocket.sendto(bytes(sentence,"utf-8"),(ServerName,Serverport))
+filecontents,seraddr=clientsocket.recvfrom(2048)
+print("from server:",filecontents)
+clientsocket.close()

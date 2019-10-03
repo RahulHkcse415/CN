@@ -61,6 +61,10 @@ int main ()
 --------------------------------------------------------------------------
 output:;
 
+TO compile:-bmsce@bmsce-Precision-T1700:~/ns-allinone-3.29/ns-3.29$ ./waf   
+TO RUN:-bmsce@bmsce-Precision-T1700:~/ns-allinone-3.29/ns-3.29$ ./waf --run scratch/first
+
+
 At time 2s client sent 1024 bytes to 10.1.1.2 port 9
 At time 2.00369s server received 1024 bytes from 10.1.1.1 port 49153
 At time 2.00369s server sent 1024 bytes to 10.1.1.1 port 49153
